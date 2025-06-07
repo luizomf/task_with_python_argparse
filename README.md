@@ -38,7 +38,7 @@ Se você já usa `uv`, o processo é extremamente simples.
 1.  **Clone o repositório:**
 
     ```bash
-    git clone [https://github.com/luizomf/task_with_argparse.git](https://github.com/luizomf/task_with_argparse.git)
+    git clone https://github.com/luizomf/task_with_python_argparse.git task_with_argparse
     cd task_with_argparse
     ```
 
@@ -65,7 +65,7 @@ Se você prefere o método tradicional.
 1.  **Clone o repositório:**
 
     ```bash
-    git clone [https://github.com/luizomf/task_with_argparse.git](https://github.com/luizomf/task_with_argparse.git)
+    git clone https://github.com/luizomf/task_with_python_argparse.git task_with_argparse
     cd task_with_argparse
     ```
 
