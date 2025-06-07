@@ -20,7 +20,7 @@ Você vai implementar um CLI completo, com múltiplos subcomandos, argumentos re
 ```bash
 git clone https://github.com/luizomf/task_with_python_argparse.git
 cd task_with_python_argparse
-git checkout tags/start-argparse
+git checkout start-argparse
 ```
 
 ---
