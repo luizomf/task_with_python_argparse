@@ -4,7 +4,7 @@
 [project]
 name = "task"
 version = "0.0.1"
-description = "task"
+description = "Um gerenciador de tarefas de linha de comando (CLI) simples e poderoso, construído com Python."
 license = { text = "MIT" }
 authors = [{ name = "Luiz Otávio Miranda" }]
 requires-python = ">=3.13"
