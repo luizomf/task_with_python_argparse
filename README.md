@@ -1,218 +1,288 @@
-# Task Manager CLI
+# 🧠 Desafio: Crie seu próprio CLI com argparse
 
 ![Python](https://img.shields.io/badge/Python-3.13%2B-blue?style=for-the-badge&logo=python)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-Um gerenciador de tarefas de linha de comando (CLI) simples e poderoso, construído com Python.
+Este projeto é um **desafio educacional** para aprender a criar ferramentas de linha de comando (CLI) com Python e a biblioteca `argparse`.
 
-## Sobre o Projeto
+## 🚀 Objetivo
 
-Este projeto foi desenvolvido como um case de estudo para um **vídeo educacional no YouTube** com o objetivo de ensinar, na prática, como utilizar a biblioteca `argparse` do Python para construir interfaces de linha de comando robustas e profissionais.
-
-A ideia é demonstrar como estruturar comandos, sub-comandos, argumentos e validações em uma aplicação real, indo além do tradicional "hello world".
-
-**Assista ao vídeo no canal:** [VÍDEO AINDA NÃO GRAVADO]
+Você vai implementar um CLI completo, com múltiplos subcomandos, argumentos requeridos e opcionais, validações, alias e muito mais. Tudo isso dentro de um projeto real de gerenciamento de tarefas.
 
 ---
 
-## Funcionalidades
+## 📦 Como começar
 
-- **Crie** tarefas com título, tags e prioridade.
-- **Liste** todas as tarefas pendentes.
-- **Pesquise** por tarefas com base em múltiplos critérios.
-- **Delete** tarefas de forma segura.
-- Interface elegante e colorida, graças à biblioteca `rich`.
+### 1. Clone o repositório
 
----
-
-## Instalação e Setup
-
-Para rodar este projeto localmente, escolha **um** dos caminhos abaixo.
-
----
-
-### Caminho 1: Com `uv` (Recomendado)
-
-Se você já usa `uv`, o processo é extremamente simples.
-
-1.  **Clone o repositório:**
-
-    ```bash
-    git clone https://github.com/luizomf/task_with_python_argparse.git task_with_argparse
-    cd task_with_argparse
-    ```
-
-2.  **Sincronize o ambiente:**
-    Este único comando irá criar o ambiente virtual, se necessário, e instalar todas as dependências e o projeto em modo editável.
-
-    ```bash
-    uv sync
-    ```
-
-3.  **Ative o ambiente (Opcional, mas recomendado):**
-    Para usar o comando `task` diretamente.
-    ```bash
-    source .venv/bin/activate
-    ```
-    _Se não ativar, você ainda pode rodar os comandos via `uv run task ...`._
-
----
-
-### Caminho 2: Com `pip` e `venv` (Tradicional)
-
-Se você prefere o método tradicional.
-
-1.  **Clone o repositório:**
-
-    ```bash
-    git clone https://github.com/luizomf/task_with_python_argparse.git task_with_argparse
-    cd task_with_argparse
-    ```
-
-2.  **Crie e ative o ambiente virtual:**
-
-    ```bash
-    python -m venv .venv
-    # No Linux/macOS
-    source .venv/bin/activate
-    # No Windows
-    .\.venv\Scripts\activate
-    ```
-
-3.  **Instale o projeto e suas dependências:**
-    ```bash
-    pip install -e .
-    ```
-
----
-
-_Se tiver dúvidas sobre ambientes Python, confira esta série de vídeos:_
-
-- _Parte 1: [Ambiente Python Moderno - Tradicional](https://youtu.be/QTw5eB6GTM8)_
-- _Parte 2: [Ambiente Python Moderno - Pyenv e Pyenv-win](https://youtu.be/X38M7C_A2XU)_
-- _Parte 3: [Ambiente Python Moderno - UV Astral](https://youtu.be/HuAc85cLRx0)_
-
-## Como Usar
-
-Após a instalação, você pode usar o comando `task` diretamente no seu terminal (com o ambiente virtual ativo).
-
-### Comando Principal
-
-Para ver a lista de todos os comandos disponíveis, use `-h` ou `--help`.
+> Use o commit/tag **start-argparse** para garantir que está no ponto certo do desafio (sem spoilers):
 
 ```bash
-task -h
-```
-
-```
-Usage: task [-h] {create,new,add,all,search,delete,one} ...
-
-Task Manager helps you organize your tasks directly from the terminal.
-
-You can create, search, list, and delete tasks with ease - all from
-your CLI. No need for web apps, mouse clicks or distractions.
-Just productivity.
-
-Positional Arguments:
-  {create,new,add,all,search,delete,one}
-    create (new, add)   Create a new task with optional metadata
-    all                 Shows all tasks
-    search              Searches for tasks
-    delete              Deletes one task by id
-    one                 Finds one task by id
-
-Options:
-  -h, --help            show this help message and exit
-```
-
-_(As seções de ajuda para cada sub-comando foram omitidas por brevidade, mas podem ser consultadas com `task <comando> -h`)_
-
----
-
-## Commands Cheat Sheet
-
-#### Criando Tarefas
-
-```bash
-# Com opções longas
-task create --task "Estudar Python moderno" --priority high --tag "estudo" --tag "python"
-
-# Com opções curtas e múltiplos valores para uma tag
-task create -t "Fazer café" -p low --tag "lazer" "alimentação" "cafeína"
-```
-
-#### Buscando Tarefas
-
-```bash
-# Busca combinando múltiplos critérios (lógica E/AND)
-task search -p low --tag "lazer"
-
-# Busca por texto no título (case-insensitive, usa regex)
-task search -t "python"
-
-# Busca usando uma expressão regular mais complexa
-task search -t '(p.{4}n)' # Encontra 'python'
-
-# Para listar todas as tarefas com limite padrão, use "search" sem argumentos
-task search
-
-# Para aumentar o limite de resultados
-task search -l 100
-```
-
-#### Outros Comandos
-
-```bash
-# Listar todas as tarefas (semelhante a 'search' sem filtros)
-task all
-
-# Encontrar uma tarefa pelo seu ID
-task one -i 1
-
-# Deletar por ID (será pedida uma confirmação)
-task delete -i 1
-
-# Deletar por ID (sem confirmação)
-task delete -i 2 -f
+git clone https://github.com/luizomf/task_with_python_argparse.git
+cd task_with_python_argparse
+git checkout tags/start-argparse
 ```
 
 ---
 
-## Desenvolvimento
+### 2. Crie e ative o ambiente virtual
 
-Este projeto utiliza `ruff` para linting e formatação, e `pyright` para checagem de tipos. As dependências de desenvolvimento são instaladas junto com o projeto ao seguir os passos de instalação.
+**Com pip/venv:**
 
-- **Checar e corrigir o código com Ruff:**
+```bash
+python -m venv .venv
+source .venv/bin/activate  # macOS/Linux
+.\.venv\Scripts\activate   # Windows
+pip install -e .
+```
 
-  ```bash
-  ruff check . --fix
-  # ou com uv
-  uvx ruff check . --fix
-  ```
+**Com uv (recomendado):**
 
-- **Formatar o código com Ruff:**
-
-  ```bash
-  ruff format .
-  # ou com uv
-  uvx ruff format .
-  ```
-
-- **Rodar a checagem de tipos com Pyright:**
-  ```bash
-  pyright .
-  # ou com uv
-  uvx pyright .
-  ```
+```bash
+uv sync
+```
 
 ---
 
-## Licença
+### 3. Rode o projeto (modo básico)
+
+Por enquanto, a única coisa que vai acontecer é limpar o terminal e imprimir:
+
+```bash
+task
+# ou, se não ativou o ambiente:
+uv run task
+```
+
+Saída esperada:
+
+```
+It works!
+```
+
+---
+
+## 🛠️ O que você deve fazer
+
+Implemente o CLI dentro de `src/task/cli.py`. Comece com o `build_parser()` e vá adicionando os subcomandos descritos durante o vídeo (ou definidos por você, se estiver estudando por conta própria).
+
+---
+
+## 📚 Dicas
+
+Este projeto segue boas práticas modernas com:
+
+- `pyproject.toml` completo com dependências, testes, lint, tipagem
+- Código organizado em `src/`
+- Suporte a instalação editável
+- Comandos já registrados (`task = task.cli:run`)
+- Pronto para uso com `uv`, `ruff`, `pyright`, `pytest`, etc.
+
+---
+
+## Regras do jogo
+
+**Opcional**: todos os "helps" de todos os sub comandos podem ter cores (syntax highlight).
+
+### 📌 Help principal (`task -h`)
+
+Essas são as configurações que você deve usar no help principal do seu CLI. Ao digitar `task -h`, essas informações estarão visíveis para o usuário.
+
+```
+nome do comando = task
+
+descrição =
+    Task Manager helps you organize your tasks directly from the terminal.
+
+    You can create, search, list, and delete tasks with ease - all from
+    your CLI. No need for web apps, mouse clicks or distractions.
+    Just productivity.
+
+Epílogo =
+    This will be shown below all arguments and can be used to add
+    copyright or other complex examples.
+```
+
+### 📌 Subcomando `create`
+
+Essas são as opções que o subcomando `create` deve conter. Ao digitar `task create -h`, o output precisa refletir essas informações:
+
+```
+nome do subcomando = create
+aliases = new, add
+
+descrição =
+    Use this command to create a new task quickly and efficiently.
+
+    Provide a title, optional tags, priority, and mark it as done if needed.
+    Whether you're planning your day or dumping ideas into the terminal,
+    this is your entry point.
+
+epílogo =
+    Examples:
+
+      task create -t "Buy groceries"
+      task create -t "Study argparse" --tag python --tag cli --priority high
+      task create -t "Walk the dog" --done
+
+    You can also combine options freely to match your workflow.
+    Tags help with filtering later. Priorities can be: low, medium, high.
+
+argumentos =
+    -t, --task
+        nome do valor = TASK
+        requerido = Sim
+        tipo = string
+        help = Describes your task
+
+    -d, --done, --no-done
+        ação = BooleanOptionalAction (permite usar --option e --no-option)
+        Padrão se não enviado = False
+        help = Marks a task as complete
+
+    --tag
+        Ação = Salvar em uma lista cada argumento enviado
+        Quantos valores são aceitos = Nenhum ou muitos (sem limite)
+        Padrão = Uma lista vazia
+        tipo = string
+        Em qual chave do argparse salvar = tags
+        help = Adds tags to your tasks for organization
+
+    -p, --priority
+        opções limitadas = low, medium, high
+        padrão = medium
+        help = Sets the priority for your task
+```
+
+---
+
+### 📌 Subcomando `all` (`task all -h`)
+
+Esse comando exibe todas as tarefas cadastradas no sistema.
+
+```
+nome do subcomando = all
+
+descrição =
+    Shows all tasks
+
+epílogo = (não há)
+
+argumentos = (nenhum)
+```
+
+---
+
+### 📌 Subcomando `search` (`task search -h`)
+
+Esse comando permite buscar tarefas com base em critérios específicos.
+
+```
+nome do subcomando = search
+
+descrição =
+    Search for tasks
+
+epílogo = (não há)
+
+argumentos =
+    (TODOS OS ARGUMENTOS SÃO OPCIONAIS)
+
+    -t, --task
+        nome do valor = TASK
+        padrão = None
+        requerido = Não
+        tipo = string
+        help = Describes your task
+
+    -d, --done, --no-done
+        ação = BooleanOptionalAction (permite usar --option e --no-option)
+        padrão = None
+        requerido = Não
+        help = Marks a task as complete
+
+    --tag
+        Ação = Salvar em uma lista cada argumento enviado
+        Quantos valores são aceitos = Nenhum ou muitos (sem limite)
+        padrão = None
+        requerido = Não
+        Em qual chave do argparse salvar = tags
+        help = Adds tags to your tasks for organization
+
+    -p, --priority
+        opções limitadas = low, medium, high
+        padrão = None
+        requerido = Não
+        help = Sets the priority for your task
+
+    -l, --limit LIMIT
+        help = Limits the number of tasks per search
+        padrão = 10
+        requerido = Não
+
+```
+
+---
+
+### 📌 Subcomando `delete` (`task delete -h`)
+
+Esse comando deleta uma tarefa específica com base no ID.
+
+```
+nome do subcomando = delete
+
+descrição =
+    Deletes one task by id
+
+epílogo = (não há)
+
+argumentos:
+
+    -i, --task-id
+        requerido = Sim
+        help = Task ID
+        tipo = Inteiro
+
+    -f, --force, --no-force
+        ação = BooleanOptionalAction (permite usar --option e --no-option)
+        padrão = False
+        requerido = Não
+        help = Removes the confirmation when deleting tasks
+```
+
+---
+
+### 📌 Subcomando `one` (`task one -h`)
+
+Esse comando busca uma única tarefa com base no ID.
+
+```
+nome do subcomando = one
+
+descrição =
+    Finds one task by id
+
+epílogo = (não há)
+
+argumentos:
+
+    -i, --task-id
+        requerido = Sim
+        help = Task ID
+        tipo = Inteiro
+```
+
+---
+
+## 📜 Licença
 
 Distribuído sob a licença MIT. Veja `LICENSE.txt` para mais informações.
 
 ---
 
-## Contato
+## 👨‍🏫 Autor
 
-Luiz Otávio Miranda - [YouTube](https://www.youtube.com/c/Ot%C3%A1vioMiranda) - [GitHub](https://github.com/luizomf)
+Luiz Otávio Miranda
+[YouTube](https://www.youtube.com/@OtavioMiranda) • [GitHub](https://github.com/luizomf)
+
+---
