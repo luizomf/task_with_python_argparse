@@ -7,8 +7,10 @@ def clear() -> None:
 
 
 def run() -> None:
+    clear()
     print("It works!")
 
 
 if __name__ == "__main__":
+    clear()
     run()
