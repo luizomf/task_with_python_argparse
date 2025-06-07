@@ -15,7 +15,7 @@ Você vai implementar um CLI completo, com múltiplos subcomandos, argumentos re
 
 ### 1. Clone o repositório
 
-> Use o commit/tag **start-argparse** para garantir que está no ponto certo do desafio (sem spoilers):
+> Use o branch **start-argparse** para garantir que está no ponto certo do desafio (sem spoilers):
 
 ```bash
 git clone https://github.com/luizomf/task_with_python_argparse.git
