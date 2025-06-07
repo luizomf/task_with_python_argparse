@@ -1,16 +1,15 @@
-import os
+from task.settings import clear
 
 
-def clear() -> None:
-    os.system("cls" if os.name == "nt" else "clear")  # noqa: S605
-    return
-
-
-def run() -> None:
-    clear()
+def build_parser() -> None:
     print("It works!")
 
 
+def run() -> None:
+    clear()  # limpa o terminal
+    build_parser()
+
+
 if __name__ == "__main__":
-    clear()
+    # entry point ao usar o módulo diretamente
     run()
