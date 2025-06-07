@@ -13,7 +13,17 @@ Você vai implementar um CLI completo, com múltiplos subcomandos, argumentos re
 
 ## 📦 Como começar
 
-### 1. Clone o repositório
+Se não souber usar o git, faça o download direto, do contrário, faça o `git clone` (mostro logo abaixo).
+
+### 0. Download direto para iniciantes (sem Git)
+
+Se você tem alguma dificuldade em usar o Git, faça o download direto abaixo - se sabe usar o git pule para **1. Clone o repositório (com Git)**.
+
+👉 [Clique aqui para baixar o `.zip`](https://github.com/luizomf/task_with_python_argparse/archive/refs/heads/start-argparse.zip)
+
+Depois de extrair, siga normalmente os passos de ambiente e instalação descritos abaixo em **2. Crie e ative o ambiente virtual**.
+
+### 1. Clone o repositório (com Git)
 
 > Use o branch **start-argparse** para garantir que está no ponto certo do desafio (sem spoilers):
 
