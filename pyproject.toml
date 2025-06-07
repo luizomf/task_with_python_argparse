@@ -8,15 +8,11 @@ description = "task"
 license = { text = "MIT" }
 authors = [{ name = "Luiz Otávio Miranda" }]
 requires-python = ">=3.13"
-dependencies = [
-    "rich>=14.0.0",
-    "rich-argparse>=1.7.1",
-    "tinydb>=4.8.2",
-]
+dependencies = ["rich>=14.0.0", "rich-argparse>=1.7.1", "tinydb>=4.8.2"]
 
-# [project.urls]
-# Homepage = ""
-# Repository = ""
+[project.urls]
+Homepage = "https://github.com/luizomf/task_with_python_argparse"
+Repository = "https://github.com/luizomf/task_with_python_argparse.git"
 
 [project.scripts]
 task = "task.cli:run"
