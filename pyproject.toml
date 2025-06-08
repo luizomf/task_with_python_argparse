@@ -5,7 +5,8 @@
 name = "task"
 version = "0.0.1"
 description = "Um gerenciador de tarefas de linha de comando (CLI) simples e poderoso, construído com Python."
-license = { text = "MIT" }
+license = "MIT"
+readme = "README.md"
 authors = [{ name = "Luiz Otávio Miranda" }]
 requires-python = ">=3.13"
 dependencies = ["rich>=14.0.0", "rich-argparse>=1.7.1", "tinydb>=4.8.2"]
@@ -22,6 +23,9 @@ dev = ["ruff", "pyright", "pytest", "pytest-xdist"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
 
 # ============================
 # Lint e formatação (Ruff)
