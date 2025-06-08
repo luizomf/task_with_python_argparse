@@ -284,6 +284,33 @@ argumentos:
 
 ---
 
+## Testing commands (manual)
+
+```bash
+task create --task "Estudar Python moderno" --priority high --tag "estudo" --tag "python"
+task create --task "Fazer compras no mercado" --no-done --priority low --tag "pessoal"
+task create --task "Enviar relatório semanal" --done --priority medium --tag "trabalho" --tag "relatório"
+task create --task "Limpar a casa" --priority medium --tag "pessoal"
+task create --task "Atualizar repositório GitHub" --done --priority high --tag "dev" --tag "git"
+task create --task "Assistir vídeo de tipagem em Python" --no-done --priority low --tag "estudo"
+task create --task "Preparar apresentação" --priority high --tag "trabalho" --tag "slides"
+task create --task "Organizar e-mails" --done --priority low --tag "trabalho"
+task create --task "Estudar NamedTuple avançado" --no-done --priority medium --tag "estudo" --tag "tipagem"
+task create --task "Configurar ambiente no VS Code" --priority medium --tag "dev" --tag "setup"
+task create --task "Testar filtros do TinyDB" --priority high --tag "dev" --tag "teste"
+task create --task "Refatorar código do CLI" --priority medium --tag "dev" --tag "argparse"
+task create --task "Criar capa para vídeo" --done --priority low --tag "youtube" --tag "thumb"
+task create --task "Estudar metaprogramação em Python" --priority high --tag "estudo" --tag "avançado"
+task create --task "Pagar contas do mês" --no-done --priority medium --tag "pessoal" --tag "financeiro"
+task create --task "Publicar vídeo no YouTube" --done --priority high --tag "youtube" --tag "trabalho"
+task create --task "Criar função map_dict_to_task" --priority medium --tag "dev" --tag "tipagem"
+task create --task "Limpar arquivos temporários" --priority low --tag "sistema"
+task create --task "Testar tipagem com cast e TypedDict" --priority high --tag "estudo" --tag "tipagem"
+task create --task "Responder comentários no canal" --no-done --priority low --tag "youtube" --tag "comunidade"
+```
+
+---
+
 ## 📜 Licença
 
 Distribuído sob a licença MIT. Veja `LICENSE.txt` para mais informações.
