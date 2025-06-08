@@ -104,7 +104,8 @@ def build_parser() -> argparse.ArgumentParser:
 
             Use this command to filter tasks by title, tags, status or priority.
             Whether you're reviewing your day or trying to find that one todo
-            you swore you wrote down, this is the command that brings order to the chaos.
+            you swore you wrote down, this is the command that brings order to
+            the chaos.
         """),
         epilog=textwrap.dedent("""
             Examples:
@@ -116,7 +117,7 @@ def build_parser() -> argparse.ArgumentParser:
             You can combine multiple options for refined results.
             The search is non-destructive and works with partial information.
 
-            All arguments are optional – filter as much or as little as you want.
+            All arguments are optional - filter as much or as little as you want.
         """),
         formatter_class=rich_argparse.RawDescriptionRichHelpFormatter,
     )
